@@ -1,0 +1,69 @@
+/* From the app's ProgressScreen + SubjectProgressRow styles. The brand gradient is
+   RN-only, so the overall card is solid navy like the Home welcome card. */
+.progress-page { gap: 12px; }
+
+/* overall */
+.pg-overall {
+  background: var(--navy); color: #fff; border-radius: var(--card-radius-lg);
+  padding: 16px; box-shadow: var(--card-shadow-lg);
+}
+.pg-overall-row { display: flex; align-items: center; gap: 12px; }
+.pg-overall-left { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.pg-overall-right { display: flex; flex-direction: column; align-items: flex-end; }
+.pg-overall-num { font-size: var(--fs-h2); font-weight: var(--fw-bold); overflow-wrap: anywhere; }
+.pg-overall-acc { font-size: var(--fs-display); font-weight: var(--fw-bold); line-height: 32px; }
+.pg-overall-label { font-size: var(--fs-caption); font-weight: var(--fw-regular); margin-top: 2px; }
+.pg-overall-label .bitext-en { color: var(--on-navy-light); }
+.pg-overall-bar { height: 10px; margin-top: 12px; border-radius: 5px; overflow: hidden; background: rgba(255, 255, 255, 0.25); }
+.pg-overall-fill { height: 100%; border-radius: 5px; background: #fff; transition: width 0.4s ease; }
+
+.pg-tagline { font-size: var(--fs-caption); font-weight: var(--fw-medium); color: var(--text-sub); }
+
+/* streak + weakest */
+.pg-cards { display: flex; flex-direction: column; gap: 12px; }
+.pg-cards .card, .pg-subjects { border-radius: var(--card-radius-lg); padding: 16px; }
+.pg-card-title { font-size: var(--fs-home-section); margin-bottom: 8px; }
+.pg-streak { border-top: 3px solid var(--gold); }
+.pg-streak-line { font-size: var(--fs-caption); font-weight: var(--fw-regular); margin-top: 4px; }
+.pg-streak-line.bitext--inline { display: block; }
+.pg-weak { border-left: 4px solid var(--primary-text); display: flex; flex-direction: column; }
+.pg-weak-text { font-size: var(--fs-caption); font-weight: var(--fw-medium); overflow-wrap: anywhere; }
+.pg-weak-en { font-size: 9.5px; color: var(--text-muted); margin-top: 2px; overflow-wrap: anywhere; }
+
+/* subject-wise */
+.pg-subjects-title { margin-bottom: 14px; }
+.pg-subject-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; }
+.sp-row { min-width: 0; }
+.sp-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; margin-bottom: 6px; }
+.sp-names { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.sp-name-ta { font-size: var(--fs-caption); font-weight: var(--fw-medium); color: var(--text); overflow-wrap: anywhere; }
+.sp-name-en { font-size: 9.5px; color: var(--text-muted); margin-top: 2px; overflow-wrap: anywhere; }
+.sp-count { flex-shrink: 0; font-size: var(--fs-caption); font-weight: var(--fw-medium); color: var(--text-sub); white-space: nowrap; }
+.sp-bar { height: 8px; background: var(--border); border-radius: 4px; overflow: hidden; }
+.sp-bar-fill { height: 100%; border-radius: 4px; background: var(--navy); transition: width 0.4s ease; }
+.sp-acc { display: block; font-size: var(--fs-caption); font-weight: var(--fw-medium); color: var(--primary-text); margin-top: 5px; }
+.sp-acc-muted { display: block; font-size: 10px; font-weight: var(--fw-regular); color: var(--text-muted); margin-top: 5px; }
+
+/* error */
+.pg-error { display: flex; flex-direction: column; align-items: center; gap: 14px; padding: 22px 16px; border-radius: var(--card-radius-lg); }
+.pg-error-text { font-size: var(--fs-caption); font-weight: var(--fw-regular); color: var(--text-sub); }
+.pg-retry {
+  min-width: 120px; min-height: 40px; display: flex; align-items: center; justify-content: center;
+  background: var(--navy); border: 0; border-radius: 20px; padding: 10px 20px; font: inherit; cursor: pointer;
+}
+.pg-retry-text { font-size: var(--fs-body); font-weight: var(--fw-medium); }
+
+/* refresh */
+.pg-refresh {
+  display: flex; align-items: center; justify-content: center; min-height: 52px;
+  background: var(--card); border: 2px solid var(--primary-text); border-radius: var(--card-radius);
+  padding: 12px; font: inherit; cursor: pointer; margin-bottom: 8px;
+}
+.pg-refresh:disabled { cursor: default; opacity: 0.8; }
+.pg-refresh-text { font-size: 15px; font-weight: var(--fw-medium); color: var(--primary-text); }
+
+/* desktop: streak + weakest side by side, subjects in two columns */
+@media (min-width: 900px) {
+  .pg-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+  .pg-subject-list { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 28px; row-gap: 18px; }
+}
