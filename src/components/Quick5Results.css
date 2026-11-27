@@ -1,0 +1,52 @@
+/* From the app's ResultsScreen styles. */
+.q5r { display: flex; flex-direction: column; gap: 16px; }
+.q5r-header { display: flex; flex-direction: column; align-items: center; gap: 8px; margin-top: 8px; }
+.q5r-icon { font-size: 44px; line-height: 1; }
+.q5r-title { font-size: var(--fs-home-section); }
+
+.q5r-stats { display: flex; gap: 10px; }
+.q5r-stat { flex: 1; min-width: 0; border-radius: var(--card-radius-lg); padding: 14px 6px; display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.q5r-stat-value { font-size: 26px; font-weight: var(--fw-bold); line-height: 1.2; }
+.q5r-stat-label { font-size: var(--fs-label); font-weight: var(--fw-medium); color: var(--text-sub); }
+.q5r-stat--total { background: #dbeafe; }
+.q5r-stat--total .q5r-stat-value { color: var(--primary-text); }
+.q5r-stat--correct { background: #d1fae5; }
+.q5r-stat--correct .q5r-stat-value { color: #10b981; }
+.q5r-stat--wrong { background: #fee2e2; }
+.q5r-stat--wrong .q5r-stat-value { color: #ef4444; }
+.q5r-stat .q5r-stat-label { color: #475569; }
+
+.q5r-accuracy { background: var(--card); border-radius: var(--card-radius-lg); padding: 16px; box-shadow: var(--card-shadow); }
+.q5r-accuracy-row { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; margin-bottom: 10px; }
+.q5r-accuracy-label { font-size: var(--fs-home-section); font-weight: var(--fw-medium); }
+.q5r-accuracy-value { font-size: var(--fs-home-section); font-weight: var(--fw-bold); }
+.q5r-bar { height: 12px; background: var(--border); border-radius: 6px; overflow: hidden; }
+.q5r-bar-fill { height: 100%; border-radius: 6px; transition: width 0.4s ease; }
+
+.q5r--great { color: #10b981; }
+.q5r--good { color: #f59e0b; }
+.q5r--low { color: #ef4444; }
+.q5r-bg--great { background: #10b981; }
+.q5r-bg--good { background: #f59e0b; }
+.q5r-bg--low { background: #ef4444; }
+
+.q5r-performance { display: flex; align-items: center; gap: 12px; border-radius: var(--card-radius-lg); padding: 16px; border-left: 4px solid; }
+.q5r-perf--great { background: #d1fae5; border-left-color: #10b981; }
+.q5r-perf--good { background: #fef3c7; border-left-color: #f59e0b; }
+.q5r-perf--low { background: #fee2e2; border-left-color: #ef4444; }
+.q5r-perf-emoji { font-size: 26px; }
+.q5r-perf-msg { flex: 1; min-width: 0; font-size: 12.5px; font-weight: var(--fw-medium); }
+
+.q5r-streak {
+  background: var(--card); border: 1px solid var(--gold); border-radius: var(--card-radius-lg);
+  padding: 16px; display: flex; flex-direction: column; align-items: center; gap: 6px;
+}
+.q5r-streak-text { font-size: var(--fs-home-section); color: var(--gold); }
+.q5r-comeback { font-size: 13px; font-weight: var(--fw-medium); }
+
+.q5r-home {
+  display: flex; justify-content: center; padding: 16px; border-radius: var(--card-radius);
+  background: var(--border); text-decoration: none; margin-bottom: 8px;
+}
+.q5r-home:hover { background: var(--primary-bg2); }
+.q5r-home-text { font-size: var(--fs-btn-lg); font-weight: var(--fw-medium); color: var(--text-sub); }

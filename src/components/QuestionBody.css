@@ -1,0 +1,71 @@
+/* Sizes and colours from the app's QuestionBody styles. Long words / URLs in
+   question text wrap instead of widening the page (no horizontal scroll). */
+.qb-question {
+  background: var(--card); border-radius: var(--card-radius-lg); padding: 18px;
+  box-shadow: var(--card-shadow); margin-bottom: 14px;
+}
+.qb-question-text {
+  font-size: 17px; font-weight: var(--fw-medium); line-height: 26px; color: var(--text);
+  white-space: pre-line; overflow-wrap: anywhere;
+}
+
+.qb-options { display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px; }
+.qb-option {
+  display: flex; align-items: stretch; width: 100%; padding: 0; text-align: left;
+  border: 2px solid var(--border); border-radius: var(--card-radius); overflow: hidden;
+  background: var(--card); color: var(--text); font: inherit; cursor: pointer;
+  -webkit-tap-highlight-color: transparent; transition: border-color 0.12s, background 0.12s;
+}
+.qb-option:not(:disabled):hover { border-color: var(--primary-text); }
+.qb-option:not(:disabled):active { opacity: 0.7; }
+.qb-option:disabled { cursor: default; }
+.qb-option-label {
+  width: 44px; min-height: 52px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--input-bg); color: var(--text-sub); font-size: 14px; font-weight: var(--fw-bold);
+}
+.qb-option-text { flex: 1; min-width: 0; padding: 14px; font-size: 15px; line-height: 22px; overflow-wrap: anywhere; }
+
+.qb-option--correct { border-color: #10b981; background: #f0fdf4; }
+.qb-option--correct .qb-option-label { background: #10b981; color: #fff; }
+.qb-option--correct .qb-option-text { color: #065f46; }
+.qb-option--wrong { border-color: #ef4444; background: #fef2f2; }
+.qb-option--wrong .qb-option-label { background: #ef4444; color: #fff; }
+.qb-option--wrong .qb-option-text { color: #991b1b; }
+
+.qb-explanation { border-radius: var(--card-radius); padding: 16px; border-left: 4px solid; margin-bottom: 16px; }
+.qb-explanation--correct { background: var(--explanation-bg); border-left-color: #10b981; }
+.qb-explanation--wrong { background: var(--explanation-wrong-bg); border-left-color: #ef4444; }
+.qb-explanation-status { display: block; font-size: var(--fs-home-section); margin-bottom: 8px; }
+.qb-explanation-text { font-size: 14px; line-height: 22px; color: var(--text-sub); white-space: pre-line; overflow-wrap: anywhere; }
+
+.qb-optexp { background: var(--card); border-radius: var(--card-radius); padding: 16px; box-shadow: var(--card-shadow); margin-bottom: 16px; }
+.qb-optexp-title { font-size: var(--fs-home-section); margin-bottom: 10px; }
+.qb-optexp-row { display: flex; align-items: flex-start; gap: 10px; border-radius: 10px; padding: 10px; margin-bottom: 8px; border: 1.5px solid; }
+.qb-optexp-row:last-child { margin-bottom: 0; }
+.qb-optexp-row--correct { background: #d1fae5; border-color: #10b981; }
+.qb-optexp-row--wrong { background: #fee2e2; border-color: #dc2626; }
+.qb-optexp-row--neutral { background: var(--input-bg); border-color: var(--border); }
+.qb-optexp-label {
+  width: 28px; height: 28px; border-radius: 7px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: var(--fw-bold); color: #fff; background: var(--text-muted);
+}
+.qb-optexp-row--correct .qb-optexp-label { background: #10b981; }
+.qb-optexp-row--wrong .qb-optexp-label { background: #dc2626; }
+.qb-optexp-text { flex: 1; min-width: 0; font-size: 13px; line-height: 20px; color: var(--text-sub); overflow-wrap: anywhere; }
+.qb-optexp-row--correct .qb-optexp-text { color: #065f46; }
+.qb-optexp-row--wrong .qb-optexp-text { color: #991b1b; }
+
+.qb-footer { display: flex; gap: 12px; padding-bottom: 8px; }
+.qb-exit {
+  flex-shrink: 0; padding: 12px 14px; border: 0; border-radius: var(--card-radius);
+  background: var(--wrong-bg); font: inherit; cursor: pointer;
+}
+.qb-exit-text { font-size: 15px; font-weight: var(--fw-medium); color: #dc2626; }
+.qb-next {
+  flex: 1; min-width: 0; padding: 12px; border: 0; border-radius: var(--card-radius);
+  background: var(--navy); font: inherit; cursor: pointer; box-shadow: 0 3px 8px rgba(26, 35, 126, 0.3);
+}
+.qb-next:disabled { opacity: 0.7; cursor: default; }
+.qb-next-text { font-size: var(--fs-btn-lg); font-weight: var(--fw-medium); }

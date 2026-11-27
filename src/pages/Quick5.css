@@ -1,0 +1,40 @@
+.q5-page { gap: 0; }
+
+/* loading / error / empty */
+.q5-center {
+  min-height: 55vh; display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 14px; padding: 24px 12px; text-align: center; max-width: 760px;
+}
+.q5-loading-text { font-size: 13px; font-weight: var(--fw-medium); color: var(--text-sub); }
+.q5-slow-text {
+  max-width: 340px; font-size: 13px; font-weight: var(--fw-medium); color: var(--info-text);
+  background: var(--info-bg); border-radius: var(--card-radius); padding: 10px 14px;
+}
+.q5-state-icon { font-size: 40px; }
+.q5-error-text { font-size: var(--fs-home-section); color: #ef4444; max-width: 340px; }
+.q5-btn {
+  min-width: 200px; padding: 12px 24px; border: 0; border-radius: 10px;
+  font: inherit; font-size: 15px; font-weight: var(--fw-medium); cursor: pointer;
+}
+.q5-btn--primary { background: var(--navy); color: #fff; }
+.q5-btn--secondary { background: #64748b; color: #fff; }
+
+/* score header (app: Question n/5 · Correct · Wrong) + progress bar */
+.q5-scorebar { background: var(--card); border-radius: var(--card-radius); box-shadow: var(--card-shadow); overflow: hidden; }
+.q5-scorebar-row { display: flex; justify-content: space-around; align-items: center; padding: 12px; }
+.q5-score-item { display: flex; flex-direction: column; align-items: center; min-width: 0; }
+.q5-score-value { font-size: 17px; font-weight: var(--fw-bold); color: var(--primary-text); line-height: 1.3; }
+.q5-score-value--correct { color: #10b981; }
+.q5-score-value--wrong { color: #dc2626; }
+.q5-score-label { font-size: 10px; font-weight: var(--fw-medium); color: var(--text-sub); }
+.q5-score-divider { width: 1px; height: 32px; background: var(--border); }
+.q5-progress { height: 5px; background: var(--border); }
+.q5-progress-fill { height: 100%; background: var(--navy); transition: width 0.25s ease; }
+
+.q5-badge-row { display: flex; padding: 14px 0 8px; }
+.q5-badge {
+  max-width: 100%; background: var(--primary-bg2); color: var(--primary-text);
+  font-size: var(--fs-caption); font-weight: var(--fw-medium);
+  padding: 5px 12px; border-radius: 20px; overflow-wrap: anywhere;
+}
+.q5-scorebar + .qb-question { margin-top: 14px; }

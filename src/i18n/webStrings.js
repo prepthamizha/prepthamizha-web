@@ -14,6 +14,8 @@ export const W = {
   saveFailed: T('சேமிக்க முடியவில்லை. மீண்டும் முயலவும்.', 'Could not save. Please try again.'),
   account: T('கணக்கு', 'Account'),
   exam: T('தேர்வு', 'Exam'),
+  // Quick 5 — shown when the backend (Render free tier) is slow to wake up
+  slowWake: T('சர்வர் தயாராகிக் கொண்டிருக்கிறது… ஒரு நிமிடம் வரை ஆகலாம். சற்று காத்திருங்கள்!', 'Waking up the server… this can take up to a minute. Please wait!'),
   // Tab labels are English-only, like the app's tab bar.
   tabs: {
     home: E('Home'),
