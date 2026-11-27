@@ -39,8 +39,3 @@ a { color: inherit; }
 .link-card-arrow { font-size: 24px; font-weight: var(--fw-bold); color: var(--primary-text); }
 .link-card--qotd .link-card-arrow { color: var(--gold); }
 
-/* placeholder pages */
-.placeholder-card { padding: 40px 20px; display: flex; flex-direction: column; align-items: center; gap: 10px; }
-.placeholder-icon { font-size: 40px; }
-.placeholder-title { font-size: var(--fs-h2); }
-.placeholder-sub { font-size: var(--fs-body); font-weight: var(--fw-regular); color: var(--text-sub); }

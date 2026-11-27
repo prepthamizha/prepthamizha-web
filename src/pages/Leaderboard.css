@@ -1,0 +1,39 @@
+/* From the app's LeaderboardScreen styles. Fixed columns 48 / flex / 72 / 60 px
+   fit a 360px phone; long names are cut with … instead of widening the row. */
+.lb-page { gap: 14px; max-width: 640px; }
+@media (min-width: 900px) { .lb-page { margin: 0 auto; } }
+
+.lb-info { background: var(--navy); border-radius: var(--card-radius-lg); padding: 16px; box-shadow: var(--card-shadow-lg); }
+.lb-info-title { font-size: var(--fs-h2); margin-bottom: 4px; }
+.lb-info-sub { font-size: var(--fs-caption); font-weight: var(--fw-regular); color: var(--on-navy-light); }
+
+.lb-table { background: var(--card); border-radius: var(--card-radius-lg); box-shadow: var(--card-shadow); overflow: hidden; }
+.lb-head, .lb-row { display: flex; align-items: center; padding: 0 12px; }
+.lb-head { padding-top: 8px; padding-bottom: 8px; border-bottom: 1px solid var(--border); background: var(--bg); }
+.lb-head .lb-head-text { font-size: var(--fs-label); font-weight: var(--fw-bold); color: var(--text-muted); }
+.lb-list { list-style: none; margin: 0; padding: 0; }
+.lb-row { padding-top: 12px; padding-bottom: 12px; border-bottom: 1px solid var(--border); }
+.lb-list:last-child .lb-row:last-child { border-bottom: 0; }
+.lb-row--me { background: var(--primary-bg2); box-shadow: inset 3px 0 0 var(--primary-text); }
+
+.lb-rank { width: 48px; flex-shrink: 0; text-align: center; font-size: 13px; font-weight: var(--fw-bold); color: var(--text-sub); }
+.lb-rank--medal { font-size: 20px; line-height: 1; }
+.lb-name-col { flex: 1; min-width: 0; padding-left: 8px; display: flex; align-items: center; gap: 6px; }
+.lb-name { min-width: 0; font-size: 14px; font-weight: var(--fw-medium); color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.lb-row--me .lb-name { color: var(--primary-text); }
+.lb-you {
+  flex-shrink: 0; font-size: 10px; font-weight: var(--fw-bold); color: var(--primary-text);
+  background: var(--primary-bg); padding: 2px 6px; border-radius: 10px;
+}
+.lb-attempted { width: 72px; flex-shrink: 0; text-align: center; font-size: 13px; font-weight: var(--fw-medium); color: var(--text); }
+.lb-accuracy { width: 60px; flex-shrink: 0; text-align: center; font-size: 13px; font-weight: var(--fw-bold); color: var(--text-sub); }
+.lb-accuracy--good { color: #10b981; }
+.lb-head .lb-name-col { display: block; }
+
+.lb-divider { padding: 10px 12px; background: var(--bg); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.lb-divider-text { font-size: var(--fs-label); font-weight: var(--fw-bold); color: var(--text-muted); text-transform: uppercase; }
+
+.lb-empty { display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 48px 16px; }
+.lb-empty-icon { font-size: 48px; }
+.lb-empty-title { font-size: var(--fs-h2); }
+.lb-empty-sub { font-size: 13px; font-weight: var(--fw-regular); color: var(--text-sub); }
