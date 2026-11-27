@@ -15,7 +15,7 @@ export const W = {
   account: T('கணக்கு', 'Account'),
   exam: T('தேர்வு', 'Exam'),
   // Quick 5 — shown when the backend (Render free tier) is slow to wake up
-  slowWake: T('சர்வர் தயாராகிக் கொண்டிருக்கிறது… ஒரு நிமிடம் வரை ஆகலாம். சற்று காத்திருங்கள்!', 'Waking up the server… this can take up to a minute. Please wait!'),
+  slowWake: T('சர்வர் தயாராகிக் கொண்டிருக்கிறது… ஒரு நிமிடம் வரை ஆகலாம். சற்று காத்திருங்கள்!', 'Getting the server ready… this can take up to a minute. Please wait a moment!'),
   // Tab labels are English-only, like the app's tab bar.
   tabs: {
     home: E('Home'),
