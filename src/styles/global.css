@@ -1,0 +1,46 @@
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--bg); color: var(--text);
+  font-family: var(--font); font-size: var(--fs-body); line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, p { margin: 0; }
+a { color: inherit; }
+
+/* ---- pages + cards (app: 14px margins, radius 12–14, soft shadow) ---- */
+.page { display: flex; flex-direction: column; gap: 14px; max-width: 760px; }
+.card {
+  background: var(--card); border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow); padding: 14px;
+}
+.card--brand { background: var(--navy); color: var(--on-navy); border-radius: var(--card-radius-lg); box-shadow: var(--card-shadow-lg); }
+
+/* Home: welcome card */
+.welcome-card { padding: 22px 20px; display: flex; flex-direction: column; gap: 10px; }
+.welcome-title { font-size: var(--fs-h1); }
+.welcome-intro { font-size: var(--fs-body); font-weight: var(--fw-medium); }
+.welcome-intro .bitext-en { color: var(--on-navy-light); }
+.welcome-tagline { align-self: flex-start; margin-top: 4px; color: var(--gold); font-weight: var(--fw-bold); font-size: var(--fs-h3); }
+
+/* Home: motivation line */
+.motivation-card { position: relative; padding: 26px 28px 14px; }
+.motivation-quote { position: absolute; top: -2px; left: 12px; font-size: 36px; line-height: 48px; color: var(--gold); }
+.motivation-text { font-size: var(--fs-home-section); }
+
+/* Home: entry cards (QOTD card in the app: gold left border + gold arrow) */
+.link-card { display: flex; align-items: center; gap: 12px; text-decoration: none; transition: transform 0.1s, box-shadow 0.15s; }
+.link-card:hover { box-shadow: var(--card-shadow-lg); }
+.link-card:active { transform: scale(0.99); }
+.link-card--quick5 { border-left: 4px solid var(--navy); }
+.link-card--qotd { border-left: 4px solid var(--gold); }
+.link-card-icon { font-size: 22px; }
+.link-card-title { flex: 1; font-size: var(--fs-home-section); }
+.link-card-arrow { font-size: 24px; font-weight: var(--fw-bold); color: var(--primary-text); }
+.link-card--qotd .link-card-arrow { color: var(--gold); }
+
+/* placeholder pages */
+.placeholder-card { padding: 40px 20px; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.placeholder-icon { font-size: 40px; }
+.placeholder-title { font-size: var(--fs-h2); }
+.placeholder-sub { font-size: var(--fs-body); font-weight: var(--fw-regular); color: var(--text-sub); }

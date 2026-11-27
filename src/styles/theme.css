@@ -1,0 +1,92 @@
+/* Colour + typography tokens ported from ExamMasterApp src/theme/ThemeContext.js.
+   brandGradient (RN experimental_backgroundImage) is skipped: brand cards use solid navy.
+   Dark palette is applied with <html data-theme="dark">. */
+
+:root {
+  /* Brand (CLAUDE.md semantic colours) */
+  --navy: #1A237E;
+  --gold: #f59e0b;
+  --gold-bg: #fef3c7;
+  --green: #10b981;
+  --red: #ef4444;
+  --on-navy: #ffffff;
+  --on-navy-sub: #cbd5e1;          /* header English / brand line */
+  --on-navy-light: rgba(255, 255, 255, 0.72); /* ON_GRADIENT_LIGHT */
+  --en-grey: #94a3b8;              /* BiText EN_GREY */
+
+  /* lightTheme */
+  --bg: #f0f4f8;
+  --card: #ffffff;
+  --border: #e2e8f0;
+  --divider: #f1f5f9;
+  --text: #1e293b;
+  --text-sub: #64748b;
+  --text-muted: #94a3b8;
+  --primary: #1A237E;
+  --primary-text: #1A237E;
+  --primary-bg: #eff6ff;
+  --primary-bg2: #dbeafe;
+  --input-bg: #f8fafc;
+  --tab-bg: #ffffff;
+  --tab-border: #e2e8f0;
+  --correct-bg: #d1fae5;
+  --correct-text: #065f46;
+  --wrong-bg: #fee2e2;
+  --wrong-text: #991b1b;
+  --info-bg: #eff6ff;
+  --info-text: #1e40af;
+  --explanation-bg: #f0fdf4;
+  --explanation-wrong-bg: #fef2f2;
+
+  /* Card style (app: radius 12–14, elevation 2–3) */
+  --card-radius: 12px;
+  --card-radius-lg: 14px;
+  --card-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  --card-shadow-lg: 0 2px 6px rgba(0, 0, 0, 0.15);
+
+  /* typography (px sizes / weights from ThemeContext.typography) */
+  --font: 'Noto Sans Tamil', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --fs-display: 28px;   /* big stat numbers */
+  --fs-h1: 22px;        /* screen headings */
+  --fs-h2: 18px;        /* card/modal headings */
+  --fs-h3: 15px;        /* section titles */
+  --fs-btn-lg: 16px;
+  --fs-body: 14px;      /* body, bodyMed, cardTitle, btnMd */
+  --fs-home-section: 13.5px;
+  --fs-caption: 12px;   /* caption, homeItem, homeSub */
+  --fs-label: 11px;     /* label, homeSmall */
+  --fw-regular: 400;
+  --fw-medium: 600;
+  --fw-bold: 700;
+  --en-scale: 0.7;      /* BiText English line = 70% of the Tamil size */
+
+  /* layout */
+  --header-h: 56px;
+  --tabbar-h: 65px;
+  --sidebar-w: 220px;
+}
+
+[data-theme='dark'] {
+  --bg: #0f172a;
+  --card: #1e293b;
+  --border: #334155;
+  --divider: #1e293b;
+  --text: #f1f5f9;
+  --text-sub: #94a3b8;
+  --text-muted: #475569;
+  --primary: #1A237E;
+  --primary-text: #60a5fa;
+  --primary-bg: #1e3a5f;
+  --primary-bg2: #1e3a5f;
+  --input-bg: #111827;
+  --tab-bg: #1e293b;
+  --tab-border: #334155;
+  --correct-bg: #064e3b;
+  --correct-text: #6ee7b7;
+  --wrong-bg: #450a0a;
+  --wrong-text: #fca5a5;
+  --info-bg: #1e3a5f;
+  --info-text: #93c5fd;
+  --explanation-bg: #052e16;
+  --explanation-wrong-bg: #450a0a;
+}

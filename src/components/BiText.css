@@ -1,0 +1,16 @@
+/* Tamil size/weight come from the caller's class; defaults use :where() so any class wins;
+   English is 70% of it, regular weight, muted — same as the app. */
+:where(.bitext) { font-size: var(--fs-body); font-weight: var(--fw-bold); color: var(--text); line-height: 1.45; }
+.bitext--stack { display: flex; flex-direction: column; }
+.bitext--center { align-items: center; text-align: center; }
+.bitext--stack > .bitext-ta { font: inherit; color: inherit; margin: 0; line-height: 1.45; }
+.bitext-en {
+  font-size: calc(1em * var(--en-scale));
+  font-weight: var(--fw-regular);
+  line-height: 1.25;
+  color: var(--en-grey);
+  margin-top: 1px;
+}
+.bitext--inline .bitext-en { line-height: inherit; margin-top: 0; }
+:where(.bitext--on-dark) { color: var(--on-navy); }
+.bitext--on-dark .bitext-en { color: rgba(255, 255, 255, 0.8); }
