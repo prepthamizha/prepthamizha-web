@@ -7,6 +7,13 @@ export const W = {
   tagline: T('வென்று காட்டுவோம்!', "Let's win!"),
   comingSoon: T('விரைவில் வருகிறது', 'Coming soon'),
   webIntro: T('TNPSC தேர்வுக்கு தினமும் பயிற்சி செய்யுங்கள் — இப்போது இணையத்திலும்.', 'Practise for TNPSC every day — now on the web too.'),
+  // Login / account (web only — the rest comes from S.auth, S.welcome, S.me)
+  notConfigured: T('உள்நுழைவு இன்னும் அமைக்கப்படவில்லை.', 'Sign-in is not set up yet (Firebase config missing).'),
+  popupBlocked: T('உள்நுழைவு சாளரம் தடுக்கப்பட்டது. Pop-up-களை அனுமதித்து மீண்டும் முயலவும்.', 'The sign-in window was blocked. Allow pop-ups and try again.'),
+  profileFailed: T('உங்கள் கணக்கை ஏற்ற முடியவில்லை. இணைய இணைப்பைச் சரிபார்த்து மீண்டும் முயலவும்.', 'Could not load your account. Check your connection and try again.'),
+  saveFailed: T('சேமிக்க முடியவில்லை. மீண்டும் முயலவும்.', 'Could not save. Please try again.'),
+  account: T('கணக்கு', 'Account'),
+  exam: T('தேர்வு', 'Exam'),
   // Tab labels are English-only, like the app's tab bar.
   tabs: {
     home: E('Home'),

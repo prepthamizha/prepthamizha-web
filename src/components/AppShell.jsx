@@ -1,4 +1,6 @@
 import { NavLink, Outlet } from 'react-router-dom';
+import AccountMenu from './AccountMenu';
+import { useAuth } from '../auth/AuthContext';
 import { S } from '../i18n/strings';
 import { W } from '../i18n/webStrings';
 import './AppShell.css';
@@ -15,14 +17,27 @@ const TABS = [
 
 // Navy header (small PREP THAMIZHA + IST greeting, like the app's TabHeaderTitle).
 // Bottom tab bar on mobile; the same nav becomes a left sidebar on wide screens.
+// Greeting name as in the app's TabHeader: first word of the display name, else the
+// email prefix.
+const firstName = (user) => {
+  const dn = user?.displayName?.trim();
+  const raw = dn ? dn.split(/\s+/)[0] : user?.email?.split('@')[0] || '';
+  return raw ? raw.charAt(0).toUpperCase() + raw.slice(1) : '';
+};
+
 const AppShell = () => {
+  const { user } = useAuth();
   const greeting = S.home.greeting(istHour());
+  const name = firstName(user);
   return (
     <div className="shell">
       <header className="shell-header">
         <div className="shell-header-inner">
-          <span className="shell-brand">PREP THAMIZHA</span>
-          <span className="shell-greeting" lang="ta">{greeting.ta} 👋</span>
+          <div className="shell-header-text">
+            <span className="shell-brand">PREP THAMIZHA</span>
+            <span className="shell-greeting" lang="ta">{greeting.ta}{name ? `, ${name}` : ''} 👋</span>
+          </div>
+          <AccountMenu />
         </div>
       </header>
 

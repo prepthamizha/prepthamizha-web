@@ -1,0 +1,37 @@
+.account { position: relative; margin-left: auto; }
+.account-btn {
+  display: flex; align-items: center; justify-content: center;
+  width: 36px; height: 36px; padding: 0; border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.35); background: transparent; cursor: pointer;
+}
+.account-btn:hover, .account-btn[aria-expanded='true'] { border-color: var(--gold); }
+.account-avatar { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
+.account-avatar--initial {
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(255, 255, 255, 0.15); color: #fff; font-weight: var(--fw-bold); font-size: 15px;
+}
+
+.account-menu {
+  position: absolute; right: 0; top: calc(100% + 8px); z-index: 20;
+  width: min(280px, calc(100vw - 24px));
+  background: var(--card); color: var(--text);
+  border: 1px solid var(--border); border-radius: var(--card-radius-lg);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.18);
+  padding: 14px; display: flex; flex-direction: column; gap: 12px;
+}
+.account-head { display: flex; flex-direction: column; gap: 2px; }
+.account-label { font-size: var(--fs-label); color: var(--text-muted); }
+.account-name { font-size: var(--fs-h3); font-weight: var(--fw-bold); margin-top: 4px; }
+.account-email { font-size: var(--fs-caption); color: var(--text-sub); overflow-wrap: anywhere; }
+
+.account-rows { margin: 0; display: flex; flex-direction: column; gap: 6px; border-top: 1px solid var(--divider); padding-top: 10px; }
+.account-row { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; font-size: var(--fs-caption); }
+.account-row dt { margin: 0; }
+.account-row dd { margin: 0; font-weight: var(--fw-medium); }
+.account-row-key { font-size: var(--fs-caption); font-weight: var(--fw-medium); color: var(--text-sub); }
+
+.account-logout {
+  border: 1px solid var(--wrong-bg); background: var(--explanation-wrong-bg); color: #dc2626;
+  border-radius: 10px; padding: 10px; font: inherit; font-weight: var(--fw-bold); cursor: pointer;
+}
+.account-logout:hover { background: var(--wrong-bg); }

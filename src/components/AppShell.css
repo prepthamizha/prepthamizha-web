@@ -9,8 +9,9 @@
 }
 .shell-header-inner {
   height: var(--header-h); padding: 0 16px;
-  display: flex; flex-direction: column; justify-content: center;
+  display: flex; align-items: center; gap: 12px;
 }
+.shell-header-text { min-width: 0; display: flex; flex-direction: column; justify-content: center; }
 .shell-brand { font-size: 10px; font-weight: var(--fw-bold); color: var(--on-navy-sub); letter-spacing: 1.5px; }
 .shell-greeting { font-size: var(--fs-home-section); font-weight: var(--fw-medium); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 

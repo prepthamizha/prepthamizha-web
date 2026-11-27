@@ -1,0 +1,89 @@
+/* Full-screen pages outside the app shell: Login, exam choice, Reactivate, loader.
+   Sizes follow the app's LoginScreen / WelcomeScreen / ReactivateAccountScreen. */
+.auth-page { min-height: 100dvh; background: var(--bg); display: flex; justify-content: center; padding: 0 14px 40px; }
+.auth-page--center { align-items: center; padding-top: 24px; }
+.auth-column { width: 100%; max-width: 420px; display: flex; flex-direction: column; gap: 14px; }
+
+.auth-brand { display: flex; flex-direction: column; align-items: center; padding: 60px 10px 32px; gap: 4px; }
+.auth-brand--compact { padding: 48px 10px 12px; }
+.auth-logo { width: 90px; height: 90px; object-fit: contain; margin-bottom: 10px; }
+.auth-brand-name { font-size: var(--fs-h1); font-weight: var(--fw-bold); color: var(--text); }
+.auth-tagline { font-size: 13px; font-weight: var(--fw-medium); color: var(--primary-text); margin-bottom: 8px; }
+.auth-subtitle { font-size: var(--fs-body); font-weight: var(--fw-regular); color: var(--text-sub); }
+
+.auth-notice { background: var(--wrong-bg); border-radius: var(--card-radius); padding: 10px 12px; }
+.auth-notice-text { font-size: 13px; font-weight: var(--fw-medium); color: var(--wrong-text); }
+.auth-notice-text .bitext-en { color: var(--wrong-text); opacity: 0.8; }
+
+.google-btn {
+  display: flex; align-items: center; justify-content: center; gap: 12px;
+  padding: 16px; border-radius: var(--card-radius);
+  background: var(--card); color: var(--text); border: 1.5px solid var(--border);
+  box-shadow: var(--card-shadow); font: inherit; font-size: var(--fs-btn-lg); font-weight: var(--fw-medium);
+  cursor: pointer;
+}
+.google-btn:hover:not(:disabled) { border-color: var(--primary-text); }
+.google-btn:disabled { opacity: 0.6; cursor: default; }
+.google-g { font-size: 18px; font-weight: var(--fw-bold); color: #ea4335; }
+
+.auth-consent { font-size: var(--fs-label); line-height: 17px; color: var(--text-muted); text-align: center; margin: 2px 14px 0; display: flex; flex-direction: column; gap: 2px; }
+.auth-consent-en { font-size: 10px; }
+.auth-consent a { color: var(--primary-text); font-weight: var(--fw-medium); }
+
+.auth-overlay {
+  position: fixed; inset: 0; z-index: 50; background: rgba(0, 0, 0, 0.55);
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px;
+}
+.auth-overlay-text { font-size: 15px; font-weight: var(--fw-medium); }
+
+.auth-loader { flex-direction: column; gap: 14px; }
+.auth-loader-text { font-size: 15px; font-weight: var(--fw-medium); }
+
+/* buttons */
+.primary-btn {
+  display: flex; align-items: center; justify-content: center; min-height: 56px;
+  background: var(--navy); color: #fff; border: 0; border-radius: var(--card-radius-lg);
+  padding: 14px 18px; font: inherit; font-size: var(--fs-btn-lg); font-weight: var(--fw-bold);
+  cursor: pointer; box-shadow: 0 3px 8px rgba(26, 35, 126, 0.3);
+}
+.primary-btn:disabled { background: var(--text-muted); box-shadow: none; cursor: default; }
+.primary-btn-label { font-size: var(--fs-btn-lg); }
+.text-btn { background: none; border: 0; color: var(--text-sub); font: inherit; font-weight: var(--fw-medium); padding: 10px; cursor: pointer; }
+.danger-link-btn { background: none; border: 0; padding: 12px; cursor: pointer; font: inherit; }
+.danger-link-btn:disabled { opacity: 0.6; cursor: default; }
+.danger-link-label { font-size: var(--fs-body); font-weight: var(--fw-medium); color: #dc2626; }
+.danger-link-label .bitext-en { color: #dc2626; opacity: 0.75; }
+
+/* exam choice (WelcomeScreen) */
+.welcome-choice-card { border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 8px; }
+.welcome-choice-title { font-size: var(--fs-home-section); }
+.welcome-choice-sub { font-size: 13px; font-weight: var(--fw-regular); color: var(--text-sub); }
+.exam-section-label { font-size: var(--fs-label); color: var(--text-muted); letter-spacing: 1px; margin-top: 10px; }
+.exam-card {
+  width: 100%; display: flex; align-items: center; gap: 12px; text-align: left;
+  background: var(--card); border: 2px solid transparent; border-left: 4px solid var(--navy);
+  border-radius: var(--card-radius); padding: 14px; box-shadow: var(--card-shadow);
+  font: inherit; color: var(--text); cursor: pointer;
+}
+.exam-card--selected { border-color: var(--navy); background: var(--primary-bg); }
+.exam-icon {
+  width: 46px; height: 46px; border-radius: 50%; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center; font-size: 22px;
+  background: rgba(26, 35, 126, 0.09);
+}
+.exam-text { flex: 1; display: flex; flex-direction: column; gap: 3px; }
+.exam-title { font-size: var(--fs-body); font-weight: var(--fw-bold); }
+.exam-card--selected .exam-title { color: var(--primary-text); }
+.exam-sub { font-size: var(--fs-caption); font-weight: var(--fw-regular); color: var(--text-sub); }
+.exam-radio {
+  width: 22px; height: 22px; border-radius: 50%; flex-shrink: 0;
+  border: 2px solid var(--border); display: flex; align-items: center; justify-content: center;
+}
+.exam-card--selected .exam-radio { border-color: var(--navy); }
+.exam-card--selected .exam-radio::after { content: ''; width: 10px; height: 10px; border-radius: 50%; background: var(--navy); }
+.auth-footer-note { font-size: var(--fs-caption); font-weight: var(--fw-regular); color: var(--text-muted); margin-top: 6px; }
+
+/* Reactivate */
+.reactivate-icon { font-size: 52px; text-align: center; }
+.reactivate-title { font-size: var(--fs-home-section); }
+.reactivate-msg { font-size: var(--fs-body); font-weight: var(--fw-regular); color: var(--text-sub); line-height: 1.55; margin-bottom: 18px; }

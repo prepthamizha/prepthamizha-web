@@ -5,6 +5,7 @@ import '@fontsource/noto-sans-tamil/600.css';
 import '@fontsource/noto-sans-tamil/700.css';
 import './styles/theme.css';
 import './styles/global.css';
+import './authInterceptor'; // Bearer token on every backend axios call
 import App from './App';
 
 createRoot(document.getElementById('root')).render(
