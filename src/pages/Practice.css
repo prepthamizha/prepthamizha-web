@@ -1,0 +1,28 @@
+/* Subject-wise Practice: subject list (rows from Progress.css) + Pro lock. */
+.pr-title { font-size: var(--fs-home-section); }
+.pr-hint { font-size: var(--fs-caption); font-weight: var(--fw-regular); color: var(--text-sub); }
+
+/* tappable rows (app: plain row, padding pulled back so text lines up with the title) */
+.pr-subject-list { gap: 2px; }
+.sp-link {
+  display: block; margin: 0 -10px; padding: 9px 10px; border-radius: 10px;
+  color: inherit; text-decoration: none; -webkit-tap-highlight-color: transparent;
+}
+.sp-link:hover { background: var(--divider); }
+.sp-link:active { background: var(--primary-bg2); }
+.sp-chevron { flex-shrink: 0; font-size: 20px; font-weight: var(--fw-bold); line-height: 20px; color: var(--primary-text); }
+
+/* Pro lock (app: QuestionScreen proLock*) */
+.pr-lock { margin: 0 auto; }
+.pr-lock-icon { font-size: 56px; line-height: 1; }
+.pr-lock-title { font-size: 20px; }
+.pr-lock-body { max-width: 380px; font-size: 14px; font-weight: var(--fw-regular); color: var(--text-sub); line-height: 1.6; }
+.pr-lock-play, .pr-lock-home {
+  width: 100%; max-width: 360px; box-sizing: border-box;
+  display: flex; justify-content: center; padding: 14px 20px; border-radius: 14px; text-decoration: none;
+}
+.pr-lock-play { background: var(--navy); margin-top: 8px; }
+.pr-lock-play:hover { filter: brightness(1.15); }
+.pr-lock-play-text { font-size: var(--fs-btn-lg); font-weight: var(--fw-bold); color: #fff; }
+.pr-lock-home { background: var(--border); }
+.pr-lock-home-text { font-size: 15px; font-weight: var(--fw-medium); color: var(--text-sub); }

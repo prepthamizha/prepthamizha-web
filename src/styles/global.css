@@ -38,4 +38,12 @@ a { color: inherit; }
 .link-card-title { flex: 1; font-size: var(--fs-home-section); }
 .link-card-arrow { font-size: 24px; font-weight: var(--fw-bold); color: var(--primary-text); }
 .link-card--qotd .link-card-arrow { color: var(--gold); }
+.link-card--practice { border-left: 4px solid var(--navy); }
+.link-card .link-card-title { min-width: 0; }
+/* app's Home PRO badge: amber when locked, green when Pro */
+.pro-badge {
+  flex-shrink: 0; padding: 3px 8px; border-radius: 20px;
+  background: #fef3c7; color: #92400e; font-size: 11px; font-weight: var(--fw-bold); white-space: nowrap;
+}
+.pro-badge--active { background: #f0fdf4; color: #15803d; }
 

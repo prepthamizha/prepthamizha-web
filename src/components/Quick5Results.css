@@ -44,6 +44,13 @@
 .q5r-streak-text { font-size: var(--fs-home-section); color: var(--gold); }
 .q5r-comeback { font-size: 13px; font-weight: var(--fw-medium); }
 
+.q5r-again {
+  display: flex; justify-content: center; padding: 16px; border-radius: var(--card-radius);
+  background: var(--navy); text-decoration: none;
+}
+.q5r-again:hover { filter: brightness(1.15); }
+.q5r-again-text { font-size: var(--fs-btn-lg); font-weight: var(--fw-medium); color: #fff; }
+
 .q5r-home {
   display: flex; justify-content: center; padding: 16px; border-radius: var(--card-radius);
   background: var(--border); text-decoration: none; margin-bottom: 8px;

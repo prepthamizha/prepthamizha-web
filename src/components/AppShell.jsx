@@ -11,6 +11,7 @@ const istHour = () => new Date(Date.now() + 5.5 * 60 * 60 * 1000).getUTCHours();
 const TABS = [
   { to: '/', icon: '🏠', label: W.tabs.home, end: true },
   { to: '/quick5', icon: '⚡', label: W.tabs.quick5 },
+  { to: '/practice', icon: '📚', label: W.tabs.practice },
   { to: '/progress', icon: '📊', label: W.tabs.progress },
   { to: '/leaderboard', icon: '🏆', label: W.tabs.leaderboard },
 ];

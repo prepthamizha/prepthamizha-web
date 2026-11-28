@@ -16,10 +16,17 @@ export const W = {
   // Quick 5 — shown when the backend (Render free tier) is slow to wake up
   slowWake: T('சர்வர் தயாராகிக் கொண்டிருக்கிறது… ஒரு நிமிடம் வரை ஆகலாம். சற்று காத்திருங்கள்!', 'Getting the server ready… this can take up to a minute. Please wait a moment!'),
   leaderboardFailed: T('தரவரிசையை ஏற்ற முடியவில்லை. மீண்டும் முயலவும்.', 'Could not load the leaderboard. Please try again.'),
+  // Subject-wise Practice — Pro lock (no purchase on the web; Pro is bought in the Android app)
+  proFailed: T('Pro நிலையைச் சரிபார்க்க முடியவில்லை. மீண்டும் முயலவும்.', 'Could not check your Pro status. Please try again.'),
+  proLockBody: T(
+    'இப்போதைக்கு Pro-வை Android செயலியில் மட்டுமே பெற முடியும். அதே Google கணக்கில் உள்நுழைந்தால், இங்கேயும் Pro தானாகக் கிடைக்கும்.',
+    'For now, Pro is available only in the Android app. Sign in with the same Google account and Pro works here too.'),
+  getAndroidApp: T('Google Play-யில் செயலியைப் பெறுங்கள்', 'Get the app on Google Play'),
   // Tab labels are English-only, like the app's tab bar.
   tabs: {
     home: E('Home'),
     quick5: E('Quick 5'),
+    practice: E('Practice'),
     progress: E('Progress'),
     leaderboard: E('Leaderboard'),
   },
