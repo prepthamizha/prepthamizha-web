@@ -26,3 +26,21 @@
 .pr-lock-play-text { font-size: var(--fs-btn-lg); font-weight: var(--fw-bold); color: #fff; }
 .pr-lock-home { background: var(--border); }
 .pr-lock-home-text { font-size: 15px; font-weight: var(--fw-medium); color: var(--text-sub); }
+.pr-btn-link { display: inline-block; text-decoration: none; text-align: center; box-sizing: border-box; }
+
+/* Previous Year Papers: year rows (no bar) and the paper summary card */
+.pr-year-top { margin-bottom: 0; align-items: center; }
+.pr-year-top .sp-name-ta { font-size: var(--fs-home-section); font-weight: var(--fw-bold); }
+.pp-start-card { display: flex; flex-direction: column; gap: 14px; border-radius: var(--card-radius-lg); padding: 18px 16px; }
+.pp-summary { font-size: 12.5px; font-weight: var(--fw-medium); color: var(--text); }
+.pp-start {
+  display: flex; justify-content: center; width: 100%; padding: 16px; border: 0; border-radius: 12px;
+  background: var(--navy); color: #fff; font: inherit; cursor: pointer;
+}
+.pp-start:hover { filter: brightness(1.15); }
+.pp-start-text { font-size: var(--fs-btn-lg); font-weight: var(--fw-bold); color: #fff; }
+.pp-badges { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.pp-badges .q5-badge { max-width: 100%; overflow-wrap: anywhere; }
+.pp-lang { background: var(--gold-bg); color: #92400e; }
+.pp-pct { margin-left: auto; font-size: 11px; font-weight: var(--fw-medium); color: var(--text-sub); white-space: nowrap; }
+.pp-score-value--year { color: var(--primary-text); }

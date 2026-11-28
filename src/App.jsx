@@ -10,6 +10,8 @@ import Progress from './pages/Progress';
 import Leaderboard from './pages/Leaderboard';
 import Practice from './pages/Practice';
 import PracticeSession from './pages/PracticeSession';
+import Papers from './pages/Papers';
+import PaperSession from './pages/PaperSession';
 
 // HashRouter: GitHub Pages has no SPA fallback, so /#/quick5 survives a refresh.
 // Everything except /login sits behind RequireAuth (sign-in → reactivate → exam choice).
@@ -25,6 +27,8 @@ const App = () => (
             <Route path="qotd" element={<Qotd />} />
             <Route path="practice" element={<Practice />} />
             <Route path="practice/:subject" element={<PracticeSession />} />
+            <Route path="papers" element={<Papers />} />
+            <Route path="papers/:year" element={<PaperSession />} />
             <Route path="progress" element={<Progress />} />
             <Route path="leaderboard" element={<Leaderboard />} />
             <Route path="*" element={<Navigate to="/" replace />} />

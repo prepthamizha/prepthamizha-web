@@ -7,20 +7,24 @@
 // ai_questions it is the "விடை தெரியவில்லை" (don't know) text; correct_answer is never
 // 'e' for those, so choosing it grades as wrong and reveals the right answer — the
 // same as the app, which has no special case for it either.
+//
+// Previous Year Papers (app: PreviousYearQuestionScreen) pick first and grade on
+// "Submit Answer": pass `selectedOption` for the picked-but-not-submitted option
+// (shown in brand blue) and `number` for the paper's "Q12." prefix.
 import BiText from './BiText';
 import { S } from '../i18n/strings';
 import { optionKeys } from '../grading';
 import './QuestionBody.css';
 
 // Same state → colour mapping as the app's getColors().
-const optionState = (option, { isAnswered, correctOption, answeredOption }) => {
-  if (!isAnswered) return 'idle';
+const optionState = (option, { isAnswered, correctOption, answeredOption, selectedOption }) => {
+  if (!isAnswered) return option === selectedOption ? 'selected' : 'idle';
   if (option === correctOption) return 'correct';
   if (option === answeredOption) return 'wrong';
   return 'idle';
 };
 
-const QuestionBody = ({ question, answeredOption, isAnswered, onSelect }) => {
+const QuestionBody = ({ question, answeredOption, isAnswered, onSelect, selectedOption = null, number = null }) => {
   const correctOption = question.correct_answer?.toLowerCase();
   const options = optionKeys(question);
   const isWrong = isAnswered && answeredOption !== correctOption;
@@ -28,12 +32,13 @@ const QuestionBody = ({ question, answeredOption, isAnswered, onSelect }) => {
   return (
     <>
       <div className="qb-question">
+        {number != null && <span className="qb-question-number">Q{number}.</span>}
         <p className="qb-question-text">{question.question_text}</p>
       </div>
 
       <div className="qb-options" role="list">
         {options.map((option) => {
-          const state = optionState(option, { isAnswered, correctOption, answeredOption });
+          const state = optionState(option, { isAnswered, correctOption, answeredOption, selectedOption });
           return (
             <button
               key={option}
@@ -42,7 +47,7 @@ const QuestionBody = ({ question, answeredOption, isAnswered, onSelect }) => {
               className={`qb-option qb-option--${state}`}
               onClick={() => { if (!isAnswered) onSelect(option); }}
               disabled={isAnswered}
-              aria-pressed={answeredOption === option}>
+              aria-pressed={answeredOption === option || selectedOption === option}>
               <span className="qb-option-label">{option.toUpperCase()}</span>
               <span className="qb-option-text">{question[`option_${option}`]}</span>
             </button>

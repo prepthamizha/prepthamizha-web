@@ -26,6 +26,11 @@
 }
 .qb-option-text { flex: 1; min-width: 0; padding: 14px; font-size: 15px; line-height: 22px; overflow-wrap: anywhere; }
 
+.qb-option--selected { border-color: var(--navy); background: var(--primary-bg); }
+.qb-option--selected .qb-option-label { background: var(--navy); color: #fff; }
+.qb-option--selected .qb-option-text { color: var(--primary-text); }
+.qb-question-number { display: block; font-size: 13px; font-weight: var(--fw-bold); color: var(--primary-text); margin-bottom: 6px; }
+
 .qb-option--correct { border-color: #10b981; background: #f0fdf4; }
 .qb-option--correct .qb-option-label { background: #10b981; color: #fff; }
 .qb-option--correct .qb-option-text { color: #065f46; }

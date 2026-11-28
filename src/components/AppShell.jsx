@@ -12,6 +12,8 @@ const TABS = [
   { to: '/', icon: '🏠', label: W.tabs.home, end: true },
   { to: '/quick5', icon: '⚡', label: W.tabs.quick5 },
   { to: '/practice', icon: '📚', label: W.tabs.practice },
+  // Sidebar only: the phone tab bar stays at five (Papers is reached from Home there).
+  { to: '/papers', icon: '🗂️', label: W.tabs.papers, desktopOnly: true },
   { to: '/progress', icon: '📊', label: W.tabs.progress },
   { to: '/leaderboard', icon: '🏆', label: W.tabs.leaderboard },
 ];
@@ -45,7 +47,7 @@ const AppShell = () => {
       <div className="shell-body">
         <nav className="shell-tabs" aria-label="Main">
           {TABS.map((t) => (
-            <NavLink key={t.to} to={t.to} end={t.end} className="shell-tab">
+            <NavLink key={t.to} to={t.to} end={t.end} className={`shell-tab${t.desktopOnly ? ' shell-tab--desktop' : ''}`}>
               <span className="shell-tab-icon" aria-hidden="true">{t.icon}</span>
               <span className="shell-tab-label">{t.label.ta}</span>
             </NavLink>

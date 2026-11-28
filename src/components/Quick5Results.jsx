@@ -9,15 +9,16 @@ import './Quick5Results.css';
 // Correct / Wrong, accuracy bar, performance message, streak card, Back to Home.
 // Like the app, it calls POST /api/streak/update when shown (idempotent per IST day)
 // and shows the stored streak from that, falling back to the streak the Quick 5
-// response carried. `practiceAgainTo` (Subject-wise Practice) adds the app's
-// "Practice Again" button, which goes back to the subject list.
+// response carried. `practiceAgainTo` adds the app's "Practice Again" button, which
+// goes back to the list the session started from (subjects, or papers with
+// `practiceAgainLabel` = "Back to Papers").
 const performanceFor = (accuracy) => {
   if (accuracy >= 70) return { emoji: '🎉', message: S.results.great, kind: 'great' };
   if (accuracy >= 50) return { emoji: '👍', message: S.results.good, kind: 'good' };
   return { emoji: '📚', message: S.results.keepGoing, kind: 'low' };
 };
 
-const Quick5Results = ({ score, total, streak: initialStreak, daily, practiceAgainTo }) => {
+const Quick5Results = ({ score, total, streak: initialStreak, daily, practiceAgainTo, practiceAgainLabel }) => {
   const [streakCount, setStreakCount] = useState(initialStreak?.current_streak ?? null);
   const accuracy = total > 0 ? Math.round((score / total) * 100) : 0;
   const perf = performanceFor(accuracy);
@@ -79,7 +80,7 @@ const Quick5Results = ({ score, total, streak: initialStreak, daily, practiceAga
 
       {practiceAgainTo && (
         <Link to={practiceAgainTo} className="q5r-again">
-          <BiText s={S.results.practiceAgain} center className="q5r-again-text" />
+          <BiText s={practiceAgainLabel || S.results.practiceAgain} center onDark className="q5r-again-text" />
         </Link>
       )}
 

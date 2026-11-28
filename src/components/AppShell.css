@@ -46,6 +46,9 @@
 .shell-tab.active { color: var(--primary-text); }
 .shell-tab.active .shell-tab-icon { filter: none; opacity: 1; background: var(--primary-bg2); }
 
+/* sidebar-only entries (Papers): hidden in the phone tab bar */
+@media (max-width: 899.98px) { .shell-tab--desktop { display: none; } }
+
 /* ---- desktop: centered column with a left sidebar nav ---- */
 @media (min-width: 900px) {
   .shell-header-inner { max-width: calc(var(--sidebar-w) + 760px); margin: 0 auto; width: 100%; box-sizing: border-box; }

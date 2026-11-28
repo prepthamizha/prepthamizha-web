@@ -6,7 +6,14 @@ import { W } from '../i18n/webStrings';
 import { motivationOfTheDay } from '../data/motivation';
 
 // Tamil-first welcome card, today's motivation line, the two daily entry points, and
-// Subject-wise Practice with the app's PRO badge (👑 when Pro, 🔒 when not).
+// the Pro features with the app's PRO badge (👑 when Pro, 🔒 when not). On phones,
+// Home is the way into Previous Year Papers (it has no tab of its own).
+// Same order, icons and titles as the app's Home list (Mock Test not on the web yet).
+const PRO_CARDS = [
+  { to: '/practice', icon: '📚', title: S.features.subjectWise },
+  { to: '/papers', icon: '🗂️', title: S.features.previousYear },
+];
+
 const Home = () => {
   const motivation = motivationOfTheDay();
   const pro = useProStatus();
@@ -35,16 +42,18 @@ const Home = () => {
         <span className="link-card-arrow" aria-hidden="true">›</span>
       </Link>
 
-      <Link to="/practice" className="card link-card link-card--practice">
-        <span className="link-card-icon" aria-hidden="true">📚</span>
-        <BiText s={S.features.subjectWise} className="link-card-title" />
-        {(pro.status === 'pro' || pro.status === 'free') && (
-          <span className={`pro-badge${pro.status === 'pro' ? ' pro-badge--active' : ''}`}>
-            {pro.status === 'pro' ? '👑 PRO' : '🔒 PRO'}
-          </span>
-        )}
-        <span className="link-card-arrow" aria-hidden="true">›</span>
-      </Link>
+      {PRO_CARDS.map((c) => (
+        <Link key={c.to} to={c.to} className="card link-card link-card--practice">
+          <span className="link-card-icon" aria-hidden="true">{c.icon}</span>
+          <BiText s={c.title} className="link-card-title" />
+          {(pro.status === 'pro' || pro.status === 'free') && (
+            <span className={`pro-badge${pro.status === 'pro' ? ' pro-badge--active' : ''}`}>
+              {pro.status === 'pro' ? '👑 PRO' : '🔒 PRO'}
+            </span>
+          )}
+          <span className="link-card-arrow" aria-hidden="true">›</span>
+        </Link>
+      ))}
     </div>
   );
 };

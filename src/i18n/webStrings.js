@@ -21,12 +21,19 @@ export const W = {
   proLockBody: T(
     'இப்போதைக்கு Pro-வை Android செயலியில் மட்டுமே பெற முடியும். அதே Google கணக்கில் உள்நுழைந்தால், இங்கேயும் Pro தானாகக் கிடைக்கும்.',
     'For now, Pro is available only in the Android app. Sign in with the same Google account and Pro works here too.'),
+  // Previous Year Papers
+  paperYear: (y) => T(`${y} வினாத்தாள்`, `${y} Paper`),
+  papersHint: T('ஆண்டைத் தொட்டு வினாத்தாளைத் தொடங்குங்கள்', 'Tap a year to open that paper'),
+  yearsFailed: T('வினாத்தாள்களை ஏற்ற முடியவில்லை. மீண்டும் முயலவும்.', 'Could not load the papers. Please try again.'),
+  noPapers: T('வினாத்தாள்கள் இல்லை', 'No papers available'),
+  backToPapers: T('வினாத்தாள்களுக்குத் திரும்பு', 'Back to Papers'),
   getAndroidApp: T('Google Play-யில் செயலியைப் பெறுங்கள்', 'Get the app on Google Play'),
   // Tab labels are English-only, like the app's tab bar.
   tabs: {
     home: E('Home'),
     quick5: E('Quick 5'),
     practice: E('Practice'),
+    papers: E('Papers'),
     progress: E('Progress'),
     leaderboard: E('Leaderboard'),
   },

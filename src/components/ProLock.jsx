@@ -22,4 +22,15 @@ const ProLock = ({ feature }) => (
   </div>
 );
 
+// GET /api/payment/status failed (network / server asleep too long): offer Retry
+// instead of showing the lock to someone who may well be Pro.
+export const ProCheckFailed = ({ onRetry }) => (
+  <div className="q5-center">
+    <span className="q5-state-icon" aria-hidden="true">⚠️</span>
+    <BiText s={W.proFailed} center className="q5-error-text" />
+    <button type="button" className="q5-btn q5-btn--primary" onClick={onRetry}>{S.common.retry.ta}</button>
+    <Link to="/" className="q5-btn q5-btn--secondary pr-btn-link">{S.common.backHome.ta}</Link>
+  </div>
+);
+
 export default ProLock;
